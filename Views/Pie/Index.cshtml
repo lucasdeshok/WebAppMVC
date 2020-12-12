@@ -1,0 +1,27 @@
+@model IEnumerable<Pie>
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">            
+            <a href="/pie/create" class="btn btn-primary">Criar novo</a>
+        </div>
+    </div>
+    <div class="row row-cols-3">
+        @foreach (var pie in Model)
+        {
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="@pie.ImageUrl" class="card-img-top" alt="@pie.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@pie.Name</h5>
+                    <p class="card-text">@pie.ShortDescription.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">R$ @pie.Price</li>
+                </ul>
+                <a href="/pie/details/@pie.Id" class="btn btn-primary">Ver Detalhes</a>
+            </div>                        
+        </div>
+        }        
+    </div>        
+</div>

@@ -1,0 +1,21 @@
+@model Pie
+
+<div class="col-lg">
+    <div class="form-group">
+        <img src="@Model.ImageUrl" width="200px" height="200px" />
+    </div>
+    <div class="form-group">
+        <label for="Name">Nome da Torta: @Model.Name</label>
+    </div>
+    <div class="form-group">
+        <label for="ShortDescription">@Model.ShortDescription</label>
+    </div>
+    <div class="form-group">
+        <label for="LongDescription">@Model.LongDescription</label>
+    </div>
+    <div class="form-group">
+        <label for="Price">Preço: R$ @Model.Price.ToString("N2")</label>
+    </div>
+</div>
+<a href="/pie" class="btn btn-primary">Voltar para Listagem</a>
+<a href="/pie/delete/@Model.Id" class="btn btn-danger">Excluir</a>

@@ -1,0 +1,38 @@
+@model Pie
+
+@if (String.IsNullOrEmpty(ViewBag.Message) == false)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+
+<form asp-controller="Pie" asp-action="Create" method="POST">
+    <div class="form-group">
+        <label for="Name">Nome da Torta</label>
+        <input type="text" asp-for="Name" class="form-control">
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label for="ShortDescription">Descrição Curta</label>
+        <input type="text" asp-for="ShortDescription" class="form-control">
+        <span asp-validation-for="ShortDescription"></span>
+    </div>
+    <div class="form-group">
+        <label for="LongDescription">Descrição Longa</label>
+        <input type="text" asp-for="LongDescription" class="form-control">
+        <span asp-validation-for="LongDescription"></span>
+    </div>
+    <div class="form-group">
+        <label for="Price">Preço</label>
+        <input type="text" asp-for="Price" class="form-control">
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div class="form-group">
+        <label for="Price">Url da Imagem</label>
+        <input type="text" asp-for="ImageUrl" class="form-control">
+        <span asp-validation-for="ImageUrl"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

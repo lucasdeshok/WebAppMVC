@@ -1,0 +1,23 @@
+@model IEnumerable<User>
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">            
+            <a href="/user/create" class="btn btn-primary">Criar novo</a>
+        </div>
+    </div>
+    <div class="row row-cols-3">
+        @foreach (var user in Model)
+        {
+        <div class="col">
+            <div class="card" style="width: 18rem;">                
+                <div class="card-body">
+                    <h5 class="card-title">@user.Name</h5>
+                    <p class="card-text">@user.Email.</p>
+                </div>
+                <a href="/user/details/@user.Id" class="btn btn-primary">Ver Detalhes</a>
+            </div>                        
+        </div>
+        }        
+    </div>        
+</div>
